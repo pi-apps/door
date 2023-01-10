@@ -1,21 +1,21 @@
-# Door for Pi
+# door-front-vue3
 
-## Introduction
+Door for Pi front end developed based on vue3
 
-It allows users to easily access and analyze data.
+## Project Setup
 
-By mining data and creating statistical charts, Pi Door helps users understand trends and patterns within the data they are interested in, and make more informed decisions as a result.
+```sh
+npm install
+```
 
-## Functions
+### Compile and Hot-Reload for Development
 
-*   **Network Stats** 
-*   **Walltes**: wallets migrations, top10 wallests, pi coin distribution
-*   **Shops**: Pi Chain Mall, lgkm
+```sh
+npm run dev
+```
 
-## Demo
+### Compile and Minify for Production
 
-[online](https://www.piiq.network/)
-
-## Lisence
-[PiOS](https://github.com/pi-apps/door/blob/main/LICENSE.md)
-
+```sh
+npm run build
+```

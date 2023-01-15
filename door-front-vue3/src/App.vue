@@ -14,7 +14,6 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBIcon
 } from 'mdb-vue-ui-kit';
 
 import {
@@ -28,7 +27,9 @@ import {
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
-  MDBDropdownItem
+  MDBDropdownItem,
+  MDBBadge,
+  MDBIcon
 } from 'mdb-vue-ui-kit';
 
 const store = useStatisticsStore()
@@ -47,7 +48,7 @@ const dropdown2 = ref(false);
 
 <template>
 
-  <MDBNavbar expand="lg" dark class="bg-purple bg-gradient" container position="sticky">
+  <MDBNavbar expand="lg" dark class="bg-purple bg-gradient " container position="sticky" >
     <MDBNavbarBrand href="#">
       <img src="/pidoor3.png" alt="" width="48" height="38">
       Pi Door
@@ -93,16 +94,33 @@ const dropdown2 = ref(false);
             </MDBDropdownMenu>
           </MDBDropdown>
         </MDBNavbarItem>
-
+        
       </MDBNavbarNav>
       <!-- Search form -->
-      <form class="d-flex input-group w-auto">
+      <!-- <form class="d-flex input-group w-auto">
         <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
         <MDBBtn outline="primary">
           Search
         </MDBBtn>
-      </form>
+      </form> -->
+
+
+      <MDBBtn color="primary" floating>
+        <img
+          src="/pi.png"
+          class="rounded-circle"
+          height="32"
+          alt=""
+          loading="lazy"
+        />
+      </MDBBtn>
+
+
     </MDBCollapse>
+
+
+
+
   </MDBNavbar>
 
   <RouterView />
@@ -229,10 +247,10 @@ const dropdown2 = ref(false);
 }
 
 
-.bi {
+/* .bi {
   vertical-align: -.125em;
   fill: currentColor;
-}
+} */
 
 #app {
   font-family: Roboto, Helvetica, Arial, sans-serif;

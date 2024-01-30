@@ -32,6 +32,23 @@ import {
   MDBIcon
 } from 'mdb-vue-ui-kit';
 
+import { loadScript } from "vue-plugin-load-script";
+import {Browser} from './utils/browser.js'
+import {PiSDK} from './utils/pisdk.js'
+
+console.log(loadScript);
+loadScript("https://sdk.minepi.com/pi-sdk.js")
+.then(()=>{
+  console.log("loadScript ok")
+  var bSandbox = PiSDK.init();
+
+  if (Browser.getType() == 'Pi' || bSandbox == true) {
+    console.log("begin authencicate")
+    // auto authencicate
+    // that.authencicate().then(()=>console.log("login completed in HelloWorld.vue"))
+  }
+})
+
 const store = useStatisticsStore()
 const sysStore = useSysStore()
 store.metrics_list();

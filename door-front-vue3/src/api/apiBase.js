@@ -44,7 +44,7 @@ class ApiBase {
       this.instance = axios.create({
         // baseURL: 'http://43.254.217.33',
         // baseURL: "http://localhost:8001",
-        baseURL: "https://api.piiq.network",
+        baseURL: "http://localhost:8001/",
         timeout: 20000
       });
       console.log(this.instance);

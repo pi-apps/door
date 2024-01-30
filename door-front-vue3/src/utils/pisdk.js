@@ -1,5 +1,5 @@
 
-import {PaymentApi} from '../api/payment'
+import {PaymentApi} from '../api/paymentSDK.js'
 
 class PiSDK {
   // methods
@@ -11,15 +11,18 @@ class PiSDK {
     console.log(window.location)
 
     console.log(window.location.origin);
-    if (window.location.origin == 'https://192.168.142.130') {
+    var sandbox = false;
+    if (window.location.origin == 'http://localhost:5173') {
       console.log("Pi.init with sandbox to true")
       Pi.init({ version: "2.0", sandbox: true});
+      sandbox = true;
     }else{
       console.log("Pi.init with sandbox to false")
       Pi.init({ version: "2.0"});
     }
 
     console.log(Pi);
+    return sandbox;
   }
 
   static authenticate () {

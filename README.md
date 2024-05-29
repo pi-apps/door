@@ -16,6 +16,6 @@ By mining data and creating statistical charts, Pi Door helps users understand t
 
 [online](https://www.piiq.network/)
 
-## Lisence
+## Licence
 [PiOS](https://github.com/pi-apps/door/blob/main/LICENSE.md)
 

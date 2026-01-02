@@ -1,0 +1,11 @@
+door-unified/
+├── src/
+│   ├── server.ts          # HTTP + WS server
+│   ├── monitor.ts         # Ledger polling
+│   ├── analyzer.ts        # TPS & anomaly
+│   └── types.ts
+├── web/
+│   ├── index.html
+│   └── main.js            # Vue 3 app (CDN / Vite optional)
+├── package.json
+└── tsconfig.json

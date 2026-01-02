@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pi Door Live</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2>Pi Network Live Monitor</h2>
+  <p>Ledger: {{ ledger }}</p>
+  <p>Tx Count: {{ tx }}</p>
+  <p>Last Close: {{ time }}</p>
+</div>
+
+<script>
+const { createApp } = Vue
+
+createApp({
+  data() {
+    return { ledger: 0, tx: 0, time: '' }
+  },
+  mounted() {
+    const ws = new WebSocket(`ws://${location.host}`)
+    ws.onmessage = e => {
+      const d = JSON.parse(e.data)
+      if (d.type === 'LEDGER_UPDATE') {
+        this.ledger = d.payload.ledger
+        this.tx = d.payload.txCount
+        this.time = new Date(d.payload.closeTime).toLocaleTimeString()
+      }
+    }
+  }
+}).mount('#app')
+</script>
+</body>
+</html>
